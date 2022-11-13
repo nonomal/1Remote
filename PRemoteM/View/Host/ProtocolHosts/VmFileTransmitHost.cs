@@ -325,7 +325,7 @@ namespace PRM.View.Host.ProtocolHosts
             {
                 view = lv;
                 var ip = MyVisualTreeHelper.FindVisualChild<ItemsPresenter>(view);
-                p = MyVisualTreeHelper.FindAncestor<ScrollContentPresenter>((DependencyObject)ip);
+                p = MyVisualTreeHelper.VisualUpwardSearch<ScrollContentPresenter>((DependencyObject)ip);
             }
             if (view == null || p == null)
                 return;

@@ -7,6 +7,7 @@ using PRM.Service;
 using PRM.Utils;
 using PRM.View.Settings;
 using Shawn.Utils;
+using Shawn.Utils.Wpf;
 using Shawn.Utils.Wpf.Controls;
 using Shawn.Utils.WpfResources.Theme.Styles;
 using KeyEventArgs = System.Windows.Input.KeyEventArgs;

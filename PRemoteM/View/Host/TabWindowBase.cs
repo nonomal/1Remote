@@ -13,6 +13,7 @@ using PRM.Model;
 using PRM.Service;
 using PRM.View.Host.ProtocolHosts;
 using Shawn.Utils;
+using Shawn.Utils.Wpf;
 using Shawn.Utils.Wpf.Controls;
 using Shawn.Utils.WpfResources.Theme.Styles;
 using ProtocolHostType = PRM.View.Host.ProtocolHosts.ProtocolHostType;

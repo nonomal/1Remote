@@ -44,8 +44,8 @@ namespace PRM
         {
             var baseDir = CanPortable ? Environment.CurrentDirectory : Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ConfigurationService.AppName);
 
-            SimpleLogHelper.WriteLogEnumLogLevel = SimpleLogHelper.EnumLogLevel.Warning;
-            SimpleLogHelper.PrintLogEnumLogLevel = SimpleLogHelper.EnumLogLevel.Debug;
+            SimpleLogHelper.WriteLogLevel = SimpleLogHelper.EnumLogLevel.Warning;
+            SimpleLogHelper.PrintLogLevel = SimpleLogHelper.EnumLogLevel.Debug;
             // init log file placement
             var logFilePath = Path.Combine(baseDir, "Logs", $"{ConfigurationService.AppName}.log.md");
             var fi = new FileInfo(logFilePath);
@@ -207,7 +207,7 @@ namespace PRM
             InitLog();
 
 #if DEV
-            SimpleLogHelper.WriteLogEnumLogLevel = SimpleLogHelper.EnumLogLevel.Debug;
+            SimpleLogHelper.WriteLogLevel = SimpleLogHelper.EnumLogLevel.Debug;
             ConsoleManager.Show();
 #endif
             KillPutty();

@@ -12,6 +12,7 @@ using PRM.Model;
 using PRM.Model.Protocol;
 using PRM.Model.Protocol.Base;
 using Shawn.Utils;
+using Shawn.Utils.Wpf;
 using Shawn.Utils.Wpf.Controls;
 using Color = System.Drawing.Color;
 

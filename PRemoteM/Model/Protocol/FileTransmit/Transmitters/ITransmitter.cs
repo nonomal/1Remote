@@ -18,10 +18,10 @@ namespace PRM.Model.Protocol.FileTransmit.Transmitters
             lock (_locker)
             {
                 if (!_fileIcons.ContainsKey("*"))
-                    _fileIcons.Add("*", SystemIconHelper.GetFileIconByExt("*").ToBitmapImage());
+                    _fileIcons.Add("*", SystemIconHelper.GetIcon("*")?.ToBitmapImage<PngBitmapEncoder>());
                 if (_fileIcons.ContainsKey(key))
                     return _fileIcons[key];
-                var icon = SystemIconHelper.GetFileIconByExt(key).ToBitmapImage();
+                var icon = SystemIconHelper.GetIcon(key)?.ToBitmapImage<PngBitmapEncoder>();
                 _fileIcons.Add(key, icon);
                 return icon;
             }
@@ -32,12 +32,21 @@ namespace PRM.Model.Protocol.FileTransmit.Transmitters
             lock (_locker)
             {
                 if (!_dictIcons.ContainsKey(""))
-                    _dictIcons.Add("", SystemIconHelper.GetFolderIcon().ToBitmapImage());
+                {
+                    var ico = SystemIconHelper.GetIcon()?.ToBitmapImage<PngBitmapEncoder>();
+                    _dictIcons.Add("", ico);
+                }
+
                 if (_dictIcons.ContainsKey(key))
+                {
                     return _dictIcons[key];
-                var icon = SystemIconHelper.GetFolderIcon(key).ToBitmapImage();
-                _dictIcons.Add(key, icon);
-                return icon;
+                }
+                else
+                {
+                    var icon = SystemIconHelper.GetIcon(key)?.ToBitmapImage<PngBitmapEncoder>();
+                    _dictIcons.Add(key, icon);
+                    return icon;
+                }
             }
         }
     }
